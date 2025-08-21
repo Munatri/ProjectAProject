@@ -8,7 +8,23 @@ packages:
   gitUsername: Munatri
   gitBranch: main
 - name: CachingGitPackage
+  version: 10.15.0.0.674
   gitServerName: GithubOrigin
   gitUrl: https://github.com/Munatri
   gitUsername: Munatri
   gitBranch: main
+services:
+- serviceName: project.projecta.integrations:testgit
+  packages:
+  - name: ProjectAProject
+    version: "1.0"
+  - name: CachingGitPackage
+    version: 10.15.0.0.674
+- serviceName: flowservices:getDate
+  packages:
+  - name: CachingGitPackage
+    version: 10.15.0.0.674
+- serviceName: pub.date:getCurrentDate
+  packages:
+  - name: WmPublic
+    version: 11.1.0.0.2064
